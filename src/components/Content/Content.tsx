@@ -475,7 +475,7 @@ const Content: React.FC<ContentProps> = ({
               iron-clad guarantees.
             </p>
             <p className="text-xl md:text-2xl font-medium leading-tight">
-              So if you want to get an awesome price on the world’s most comfortable holster…
+              So if you want to get an awesome price on the world’s most comfortable holster..
             </p>
             <p className="text-xl md:text-2xl font-medium leading-tight">
               <span className="font-bold">
