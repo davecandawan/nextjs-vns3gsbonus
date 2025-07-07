@@ -1,6 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import { useSearchParams } from 'next/navigation';
 
 const VidalyticsVideo = dynamic(() => import('../VidalyticsVideo/VidalyticsVideo'), {
   ssr: false,
@@ -13,6 +14,14 @@ interface ContentProps {
 const Content: React.FC<ContentProps> = ({
   buttonText = 'Give Me My VNSH Holster + FREE QuickLock!',
 }) => {
+  const searchParams = useSearchParams();
+  
+  // Get all current URL parameters
+  const getCheckoutUrl = (baseUrl: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    const queryString = params.toString();
+    return `${baseUrl}${queryString ? `?${queryString}` : ''}`;
+  };
   return (
     <div className="min-h-screen bg-[url('/bg.webp')] bg-cover bg-fixed bg-repeat bg-center">
       <div className="sticky top-0 left-0 right-0 w-full bg-custom-green text-black text-center py-2 px-4 text-[1.3rem] sm:text-[1.5rem] font-semibold z-50 shadow-md">
@@ -40,9 +49,11 @@ const Content: React.FC<ContentProps> = ({
           </div>
 
           <div className="text-center my-8">
-            <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-2xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-100">
-              {buttonText}
-            </button>
+            <a href={getCheckoutUrl('https://secure.vnsh.com/vns3gsbonus/checkout')} className="inline-block">
+              <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-2xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-100">
+                {buttonText}
+              </button>
+            </a>
           </div>
 
           <div className="text-center my-8">
@@ -183,9 +194,11 @@ const Content: React.FC<ContentProps> = ({
               <span className="font-bold">The answer is ZERO.</span>
             </p>
             <div className="text-center my-8">
-              <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-2xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-100">
-                {buttonText}
-              </button>
+              <a href={getCheckoutUrl('https://secure.vnsh.com/vns3gsbonus/checkout')} className="inline-block">
+                <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-2xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-100">
+                  {buttonText}
+                </button>
+              </a>
             </div>
             <div className="text-center my-8">
               <p className="text-xl md:text-1xl font-semibold leading-normal md:leading-tight text-red-600">
@@ -253,9 +266,11 @@ const Content: React.FC<ContentProps> = ({
               </div>
             </div>
             <div className="text-center my-8">
-              <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-2xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-100">
-                {buttonText}
-              </button>
+              <a href={getCheckoutUrl('https://secure.vnsh.com/vns3gsbonus/checkout')} className="inline-block">
+                <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-2xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-100">
+                  {buttonText}
+                </button>
+              </a>
             </div>
             <div className="text-center my-8">
               <p className="text-xl md:text-1xl font-semibold leading-normal md:leading-tight text-red-600">
@@ -417,9 +432,11 @@ const Content: React.FC<ContentProps> = ({
               , because…
             </p>
             <div className="text-center my-8">
-              <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-2xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-100">
-                {buttonText}
-              </button>
+              <a href={getCheckoutUrl('https://secure.vnsh.com/vns3gsbonus/checkout')} className="inline-block">
+                <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-2xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-100">
+                  {buttonText}
+                </button>
+              </a>
             </div>
             <div className="text-center my-8">
               <p className="text-xl md:text-1xl font-semibold leading-normal md:leading-tight text-red-600">
@@ -486,9 +503,11 @@ const Content: React.FC<ContentProps> = ({
               Then you owe it to yourself to grab this deal now!
             </p>
             <div className="text-center my-8">
-              <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-2xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-100">
-                {buttonText}
-              </button>
+              <a href={getCheckoutUrl('https://secure.vnsh.com/vns3gsbonus/checkout')} className="inline-block">
+                <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-2xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-100">
+                  {buttonText}
+                </button>
+              </a>
             </div>
             <div className="text-center my-8">
               <p className="text-xl md:text-1xl font-semibold leading-normal md:leading-tight text-red-600">
