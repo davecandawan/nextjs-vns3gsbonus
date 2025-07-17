@@ -15,7 +15,7 @@ const Content: React.FC<ContentProps> = ({
   buttonText = 'Give Me My VNSH Holster + FREE QuickLock!',
 }) => {
   const searchParams = useSearchParams();
-  
+
   // Get all current URL parameters
   const getCheckoutUrl = (baseUrl: string) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -25,8 +25,13 @@ const Content: React.FC<ContentProps> = ({
   return (
     <div className="min-h-screen bg-[url('/bg.webp')] bg-cover bg-fixed bg-repeat bg-center">
       <div className="sticky top-0 left-0 right-0 w-full bg-custom-green text-black text-center py-2 px-4 text-[1.3rem] sm:text-[1.5rem] font-semibold z-50 shadow-md">
-        FREE <span className="line-through">$50</span> VNSH QuickLock With Every Order - This Page
-        ONLY!
+        <a
+          href={getCheckoutUrl('https://secure.vnsh.com/vns3gsbonus/checkout')}
+          className="inline-block text-black hover:no-underline hover:text-black"
+        >
+          FREE <span className="line-through">$50</span> VNSH QuickLock With Every Order - This Page
+          ONLY!
+        </a>
       </div>
       <div className="w-full max-w-[1140px] mx-auto px-5 py-4 lg:px-20 bg-white">
         <div className="space-y-8">
@@ -49,9 +54,15 @@ const Content: React.FC<ContentProps> = ({
           </div>
 
           <div className="text-center my-8">
-            <a href={getCheckoutUrl('https://secure.vnsh.com/vns3gsbonus/checkout')} className="inline-block">
-              <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-2xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-100">
-                {buttonText}
+            <a
+              href={getCheckoutUrl('https://secure.vnsh.com/vns3gsbonus/checkout')}
+              className="inline-block"
+            >
+              <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-4xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-105 whitespace-normal text-center flex items-center justify-center h-[100px] md:h-auto">
+                <span className="inline-block w-full md:whitespace-nowrap">
+                  <span className="block md:inline">Give Me My VNSH Holster</span>
+                  <span className="block md:inline">+ FREE QuickLock!</span>
+                </span>
               </button>
             </a>
           </div>
@@ -194,9 +205,15 @@ const Content: React.FC<ContentProps> = ({
               <span className="font-bold">The answer is ZERO.</span>
             </p>
             <div className="text-center my-8">
-              <a href={getCheckoutUrl('https://secure.vnsh.com/vns3gsbonus/checkout')} className="inline-block">
-                <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-2xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-100">
-                  {buttonText}
+              <a
+                href={getCheckoutUrl('https://secure.vnsh.com/vns3gsbonus/checkout')}
+                className="inline-block"
+              >
+                <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-4xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-105 whitespace-normal text-center flex items-center justify-center h-[100px] md:h-auto">
+                  <span className="inline-block w-full md:whitespace-nowrap">
+                    <span className="block md:inline">Give Me My VNSH Holster</span>
+                    <span className="block md:inline">+ FREE QuickLock!</span>
+                  </span>
                 </button>
               </a>
             </div>
@@ -266,9 +283,15 @@ const Content: React.FC<ContentProps> = ({
               </div>
             </div>
             <div className="text-center my-8">
-              <a href={getCheckoutUrl('https://secure.vnsh.com/vns3gsbonus/checkout')} className="inline-block">
-                <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-2xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-100">
-                  {buttonText}
+              <a
+                href={getCheckoutUrl('https://secure.vnsh.com/vns3gsbonus/checkout')}
+                className="inline-block"
+              >
+                <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-4xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-105 whitespace-normal text-center flex items-center justify-center h-[100px] md:h-auto">
+                  <span className="inline-block w-full md:whitespace-nowrap">
+                    <span className="block md:inline">Give Me My VNSH Holster</span>
+                    <span className="block md:inline">+ FREE QuickLock!</span>
+                  </span>
                 </button>
               </a>
             </div>
@@ -432,9 +455,15 @@ const Content: React.FC<ContentProps> = ({
               , because…
             </p>
             <div className="text-center my-8">
-              <a href={getCheckoutUrl('https://secure.vnsh.com/vns3gsbonus/checkout')} className="inline-block">
-                <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-2xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-100">
-                  {buttonText}
+              <a
+                href={getCheckoutUrl('https://secure.vnsh.com/vns3gsbonus/checkout')}
+                className="inline-block"
+              >
+                <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-4xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-105 whitespace-normal text-center flex items-center justify-center h-[100px] md:h-auto">
+                  <span className="inline-block w-full md:whitespace-nowrap">
+                    <span className="block md:inline">Give Me My VNSH Holster</span>
+                    <span className="block md:inline">+ FREE QuickLock!</span>
+                  </span>
                 </button>
               </a>
             </div>
@@ -503,9 +532,15 @@ const Content: React.FC<ContentProps> = ({
               Then you owe it to yourself to grab this deal now!
             </p>
             <div className="text-center my-8">
-              <a href={getCheckoutUrl('https://secure.vnsh.com/vns3gsbonus/checkout')} className="inline-block">
-                <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-2xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-100">
-                  {buttonText}
+              <a
+                href={getCheckoutUrl('https://secure.vnsh.com/vns3gsbonus/checkout')}
+                className="inline-block"
+              >
+                <button className="bg-[#28a745] hover:bg-[#218838] text-white font-bold py-4 px-8 text-xl md:text-4xl transition-all duration-300 animate-custom-pulse hover:opacity-100 hover:scale-105 whitespace-normal text-center flex items-center justify-center h-[100px] md:h-auto">
+                  <span className="inline-block w-full md:whitespace-nowrap">
+                    <span className="block md:inline">Give Me My VNSH Holster</span>
+                    <span className="block md:inline">+ FREE QuickLock!</span>
+                  </span>
                 </button>
               </a>
             </div>
