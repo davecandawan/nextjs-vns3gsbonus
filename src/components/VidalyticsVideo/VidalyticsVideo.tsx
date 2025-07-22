@@ -31,7 +31,7 @@ const VidalyticsVideo = () => {
     // Start observing the document with the configured parameters
     observer.observe(document.documentElement, {
       childList: true,
-      subtree: true
+      subtree: true,
     });
 
     // Also check periodically as a fallback
@@ -56,7 +56,7 @@ const VidalyticsVideo = () => {
       if (videoContainerRef.current) {
         videoContainerRef.current.innerHTML = '';
       }
-      
+
       // Add a small delay to ensure the DOM is ready
       const timer = setTimeout(() => {
         // @ts-ignore - We've already checked that Vidalytics exists
@@ -71,7 +71,7 @@ const VidalyticsVideo = () => {
   }, [scriptReady]);
 
   return (
-    <div className="w-full max-w-[1000px] mx-auto relative rounded-lg overflow-hidden shadow-md bg-black aspect-video -mt-2">
+    <div className="w-full max-w-[1000px] mx-auto relative overflow-hidden shadow-md bg-black aspect-video -mt-2">
       {/* Load the Vidalytics loader script */}
       <Script
         id="vidalytics-loader"
@@ -107,9 +107,9 @@ const VidalyticsVideo = () => {
           `,
         }}
       />
-      
+
       {/* Video container */}
-      <div 
+      <div
         id="vidalytics_embed_ftyvsSZ_3zHHYXRU"
         ref={videoContainerRef}
         className="relative w-full h-full min-h-[300px]"

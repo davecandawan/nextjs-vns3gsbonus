@@ -33,7 +33,7 @@ const Content: React.FC<ContentProps> = ({
           ONLY!
         </a>
       </div>
-      <div className="w-full max-w-[1140px] mx-auto px-5 py-4 lg:px-20 bg-white">
+      <div className="w-full max-w-[1200px] mx-auto px-5 pt-4 pb-4 lg:px-20 bg-white -mt-2">
         <div className="space-y-8">
           <header className="text-center py-1">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium leading-snug md:leading-tight mb-4 px-2">
@@ -42,7 +42,7 @@ const Content: React.FC<ContentProps> = ({
               Even If You Wear
               <span className="underline"> Nothing But Gym Shorts, Sweatpants and T-Shirts!</span>
             </h1>
-            <span className="text-xl md:text-2xl font-semibold text-red-600 px-4 pt-1 pb-0 inline-block italic">
+            <span className="text-xl md:text-2xl font-bold text-[#ff0000] px-4 pt-1 pb-0 inline-block italic">
               <span className="bg-[#ff0] px-1 py-1">
                 Guaranteed Comfort Or 100% Of Your Money Back!
               </span>
@@ -65,14 +65,6 @@ const Content: React.FC<ContentProps> = ({
                 </span>
               </button>
             </a>
-          </div>
-
-          <div className="text-center my-8">
-            <p className="text-xl md:text-1xl font-semibold leading-normal md:leading-tight text-red-600">
-              <span className="bg-[#ff0] px-2 py-1">
-                60 Days to Try It Yourself… Love It Or You Don't Pay a Dime!
-              </span>
-            </p>
           </div>
           <div className="w-full md:w-[80%] mx-auto max-w-[1120px] px-4 md:px-0">
             <Image
@@ -218,7 +210,7 @@ const Content: React.FC<ContentProps> = ({
               </a>
             </div>
             <div className="text-center my-8">
-              <p className="text-xl md:text-1xl font-semibold leading-normal md:leading-tight text-red-600">
+              <p className="text-xl md:text-1xl font-bold leading-normal md:leading-tight text-[#ff0000]">
                 <span className="bg-[#ff0] px-2 py-1">
                   60 Days to Try It Yourself… Love It Or You Don't Pay a Dime!
                 </span>
@@ -296,14 +288,14 @@ const Content: React.FC<ContentProps> = ({
               </a>
             </div>
             <div className="text-center my-8">
-              <p className="text-xl md:text-1xl font-semibold leading-normal md:leading-tight text-red-600">
+              <p className="text-xl md:text-1xl font-bold leading-normal md:leading-tight text-[#ff0000]">
                 <span className="bg-[#ff0] px-2 py-1">
                   60 Days to Try It Yourself… Love It Or You Don't Pay a Dime!
                 </span>
               </p>
             </div>
             <header className="text-center py-1">
-              <div className="text-[25px] md:text-[36px] font-bold leading-tight md:leading-[1.0] text-[rgb(255,0,0)]">
+              <div className="text-[25px] md:text-[36px] font-bold leading-tight md:leading-[1.0] text-[#ff0000]">
                 <div>
                   <em>Limited FREE Bonus Gift (Worth $50)</em>
                 </div>
@@ -468,7 +460,7 @@ const Content: React.FC<ContentProps> = ({
               </a>
             </div>
             <div className="text-center my-8">
-              <p className="text-xl md:text-1xl font-semibold leading-normal md:leading-tight text-red-600">
+              <p className="text-xl md:text-1xl font-bold leading-normal md:leading-tight text-[#ff0000]">
                 <span className="bg-[#ff0] px-2 py-1">
                   60 Days to Try It Yourself… Love It Or You Don't Pay a Dime!
                 </span>
@@ -545,34 +537,24 @@ const Content: React.FC<ContentProps> = ({
               </a>
             </div>
             <div className="text-center my-8">
-              <p className="text-xl md:text-1xl font-semibold leading-normal md:leading-tight text-red-600">
+              <p className="text-xl md:text-1xl font-bold leading-normal md:leading-tight text-[#ff0000]">
                 <span className="bg-[#ff0] px-2 py-1">
                   60 Days to Try It Yourself… Love It Or You Don't Pay a Dime!
                 </span>
               </p>
             </div>
-            {/* Testimonial Images */}
-            <div className="w-full my-8">
-              {/* Desktop Image */}
-              <div className="hidden md:block">
-                <Image
-                  src="/contentimages/TestimoniesDesktop1.webp"
-                  alt="Customer testimonials"
-                  width={1400}
-                  height={1000}
-                  className="w-full h-auto rounded-lg"
-                  priority
-                />
-              </div>
-              {/* Mobile Image */}
-              <div className="block md:hidden">
+            {/* Testimonial Image */}
+            <div className="w-full my-8 flex justify-center">
+              <div className="w-full max-w-[800px] mx-auto">
                 <Image
                   src="/contentimages/vnsh_TestimoniesMobile.webp"
-                  alt="Customer testimonials mobile"
-                  width={500}
-                  height={800}
-                  className="w-full h-auto rounded-lg"
+                  alt="Customer testimonials"
+                  width={800}
+                  height={775}
+                  className="rounded-lg w-full h-auto"
                   priority
+                  quality={100}
+                  unoptimized={false}
                 />
               </div>
             </div>
