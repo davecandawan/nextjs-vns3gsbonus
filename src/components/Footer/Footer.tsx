@@ -69,22 +69,34 @@ const FooterLinks: React.FC<{ loadInfo: (id: string) => void }> = ({ loadInfo })
 const Footer: React.FC = () => {
   const [modalId, setModalId] = useState<string>('');
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
+  const [scrollbarWidth, setScrollbarWidth] = useState<number>(0);
+  const [bodyPaddingRight, setBodyPaddingRight] = useState<string>('');
+
+  // Store the original scroll position
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const loadInfo = (id: string) => {
+    // Save current scroll position
+    setScrollPosition(window.scrollY);
     setModalId(id);
+    setIsAnimating(true);
     setShowModal(true);
-    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
-    setShowModal(false);
-    setModalId('');
-    document.body.style.overflow = 'auto';
+    setIsAnimating(false);
+    setTimeout(() => {
+      setShowModal(false);
+      setModalId('');
+      // Restore scroll position
+      window.scrollTo(0, scrollPosition);
+    }, 300); // Match this with the transition duration
   };
 
   return (
-    <footer className="w-full mt-2 bg-white px-0">
-      <div className="py-8 text-black bg-white w-full">
+    <footer className="w-full mt-2 bg-white px-0 pb-8">
+      <div className="pt-4 pb-4 text-black bg-white w-full">
         <div className="py-1">
           <div className="w-full flex flex-wrap justify-center gap-1">
             <div className="flex-1 min-w-[280px] max-w-[380px] p-1 text-center">
@@ -112,7 +124,7 @@ const Footer: React.FC = () => {
                     />
                   </div>
                 </div>
-                <h3 className="text-lg font-bold mt-4 mb-2 text-black whitespace-nowrap">
+                <h3 className="text-lg font-extrabold mt-4 mb-2 text-black whitespace-nowrap">
                   60-Day Money Back Guarantee
                 </h3>
                 <p className="text-black text-base leading-tight w-full">
@@ -146,7 +158,7 @@ const Footer: React.FC = () => {
                     />
                   </div>
                 </div>
-                <h3 className="text-lg font-bold mt-4 mb-2 text-black whitespace-nowrap">
+                <h3 className="text-lg font-extrabold mt-4 mb-2 text-black whitespace-nowrap">
                   Thank You!
                 </h3>
                 <p className="text-black text-base leading-tight w-full">
@@ -180,7 +192,7 @@ const Footer: React.FC = () => {
                     />
                   </div>
                 </div>
-                <h3 className="text-lg font-bold mt-4 mb-2 text-black whitespace-nowrap">
+                <h3 className="text-lg font-extrabold mt-4 mb-2 text-black whitespace-nowrap">
                   100% Secure Payment
                 </h3>
                 <p className="text-black text-base leading-tight w-full">
@@ -193,19 +205,23 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="flex flex-col items-center">
-          <div className="text-lg text-center text-black mb-1">
+          <div className="text-lg text-center text-black -mb-1">
             © 2025 VNSH.com All Rights Reserved.
           </div>
-          <div className="mt-2">
+          <div className="mt-4">
             <FooterLinks loadInfo={loadInfo} />
           </div>
         </div>
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 p-4 pt-20" onClick={closeModal}>
+        <div
+          className={`fixed inset-0 z-50 p-4 pt-20 flex items-start justify-center transition-opacity duration-300 ease-out ${isAnimating ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+          onClick={closeModal}
+        >
           <div
-            className="bg-white rounded-lg max-w-3xl w-full max-h-[80vh] overflow-y-auto relative p-1 mx-auto"
+            className={`bg-white rounded-lg max-w-3xl w-full max-h-[80vh] overflow-y-auto relative p-1 mx-auto transform transition-all duration-300 ease-out ${isAnimating ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}
             onClick={e => e.stopPropagation()}
           >
             <button
