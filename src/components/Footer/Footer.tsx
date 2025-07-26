@@ -206,7 +206,7 @@ const Footer: React.FC = () => {
 
         <div className="flex flex-col items-center">
           <div className="text-lg text-center text-black -mb-1">
-            © 2025 VNSH.com All Rights Reserved.
+            © {new Date().getFullYear()} VNSH.com All Rights Reserved.
           </div>
           <div className="mt-4">
             <FooterLinks loadInfo={loadInfo} />
